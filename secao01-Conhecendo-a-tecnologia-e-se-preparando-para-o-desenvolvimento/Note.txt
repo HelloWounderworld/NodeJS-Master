@@ -1,0 +1,236 @@
+Seção 1  - Introdução:
+    Aula 1:
+        Temos 4 recursos que serão essenciais e úteis para melhor produtividade como programador profissional:
+        -express : Um framework NodeJS para aplicações WEB
+        -EJS - Uma linguagem de modelagem para criação de paginas HTML utilizando JavaScript
+        -Nodemon - Um utiliário que reinicia automaticamente o servidor NodeJS quando houver qualquer alteração em nossos scripts
+        -npm - Um gerenciador de pacotes JavaScript
+
+    Aula 2:
+        O Curso Completo do Desenvolvedor NodeJS e MongoDB possui um grupo no Facebook, a proposta é criar uma espaço colaborativo, possibilitando a troca de conhecimentos e experiências entre os participantes do curso, uma ótima oportunidade para conhecer pessoas com os mesmos objetivos profissionais que você!
+
+        Vale lembrar porém que o grupo não é dedicado ao suporte de dúvidas do curso, as dúvidas deverão ser postadas aqui no fórum da Udemy normalmente.
+
+        Link do grupo: https://www.facebook.com/groups/458536931149217/
+
+        Aguardamos você lá.
+    
+    Aula 3: 
+        Aqui vc precisa entender sobre o conceito de cliente servidor. Seguir o link de leitura:
+        https://developer.mozilla.org/pt-BR/docs/Learn/Server-side/First_steps/Client-Server_overview
+    
+    Aula 4:
+        Download e Instalação do node. Basta visitar a página nodejs.org.
+
+    Aula 5:
+        [Linux] - Instalação do NodeJS
+        Artigo dedicado a usuários do sistema operacional Linux
+
+
+
+        Introdução
+
+        Nesse artigo você aprenderá a como instalar o Node.js e o NPM no Sistema Operacional Ubuntu 16.04.
+
+
+
+        Como Instalar Utilizando o NVM
+
+        Nesse artigo iremos usar uma ferramenta chamada nvm, que significa "Node.js version manager" ou "Gerenciador de Versão do Node.js" para realizar a instalação do NodeJS e do NPM.
+
+        Usando o nvm você poderá controlar o seu ambiente de desenvolvimento mais facilmente, com ele teremos acesso a uma série de versões da plataforma NodeJS de tal modo a possibilitar a instalação da que for mais apropriada para as nossas necessidades.
+
+        Para começar, precisaremos obter os pacotes de software do nosso repositório Ubuntu que nos permitirão compilar pacotes de fontes. O script nvm aproveitará estas ferramentas para construir os componentes necessários. Para começar vamos abrir o Terminal do Linux, em seguida vamos rodar os seguintes comandos no Terminal:
+
+        sudo apt-get update
+
+        sudo apt-get install build-essential libssl-dev
+
+        Segue abaixo as imagens da execução dos comandos acima concluídos.
+        
+
+
+
+
+
+        
+        Uma vez que os pacotes requeridos estejam instalados, você poderá baixar o script de instalação do nvm com o curl.
+
+        É importante que antes da execução você mude o diretório no terminal para a Área de Tabalho (desktop), pois do contrário o script de instalação não será baixado, e para mudar o diretório do Terminal você pode usar o comando cd (change directory) e na sequência usar o comando abaixo para baixar o script de instalação:
+
+        curl –sL https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh -o install_nvm.sh
+
+        Na sequência, quando o terminal for liberado para digitação novamente, utilize o comando ls (list) para verificar se foi criado um arquivo install_nvm.sh na pasta em que você está.
+
+        Agora que o script de instalação foi criado, devemos executá-lo, e podemos fazer isso através do comando bash, ficando da seguinte maneira:
+
+        bash install_nvm.sh
+
+        Basta esperar a execução do comando finalizar e já temos o NVM instalado em nossa máquina.
+
+        Abaixo temos uma imagem com o processo descrito acima:
+
+
+        
+
+        Agora para podermos acessar as funções do NVM temos que reiniciar o Terminal, é só fechá-lo e abri-lo novamente. Feito isso podemos instalar o NodeJS.
+
+        Se você usar o comando:
+
+        nvm ls-remote
+
+        Será listado no terminal todas as versões disponíveis do NodeJS, como mostra a imagem abaixo:
+
+
+        
+
+        No momento da escrita desse artigo a última versão disponível era a v8.1.2.
+
+        Decidimos instalar a versão 6.11.0 do NodeJS por ser a versão mais estável no momento, para realizar a instalação basta você usar o comando:
+
+        nvm install 6.11.0
+
+        Assim que a execução do comando terminar você já terá o NodeJS na versão 6.11.0 e o NPM 3.10.10 instalados na sua máquina. Para listar as versões do NodeJS instaladas através do NVM basta usar o comando:
+
+        nvm ls
+
+        Esse comando deverá listar apenas a versão 6.11.0 e mostra-la como a versão padrão.
+
+        A imagem abaixo mostra o processo de instalação do NodeJS através do NVM e a listagem das versões instaladas:
+
+
+
+
+        E pronto! Você já tem o NVM o NodeJS e o NPM instalados em sua máquina. Para garantir que o NodeJs e o NPM estejam funcionando você pode fazer o teste com os seguintes comandos:
+
+        node –v
+
+        npm –v
+
+        Os comandos acima deverão ter como resultado algo como a imagem abaixo:
+
+
+
+        
+
+        Qualquer dúvida ou sugestão é informar ;)
+
+        Bons estudos!!!
+
+    Aula 6:
+        Instalar o VSCode ou algum outr sublime text que esteja em alta do momento.
+
+Seção 2:
+    Aula 1:
+        Para executar o arquivo JavaScript no NodeJS, bastaria, pelo terminal, entrar na pasta projeto seu e nela digitar "node (nome do arquivo JS)".
+    
+    Aula 2:
+        Respondendo requisições HTTP com NodeJS. Basta seguir o arquivo noticias.js.
+
+    Aula 3:
+        Respondendo requisições com base na url requisitada. Basta seguir o arquivo noticias.
+        
+Seção 3:
+    Aula 1:      
+        Ao baixar o node, o npm já vem incluso, para verificar isso bastaria digitar npm -v para verificar a sua versão instalada.
+        Para iniciarmos o npm, precisamos ir no terminal e colocar o comando npm init. Ao realizarmos isso e preenchendo as resquições que lhe são solicitadas, no final, será criado um arquivo chamado package.json.
+    
+Agora, vamos instalar o Express usando o npm. No caso, podemos jogar no terminal npm install express -save.
+A verdade é que podemos digitar somente o npm install express, mas o motivos de colocarmos o '-save' está no fato de que podemos trazer os arquivos instalados dentro da nossa máquina, vide o node_modules eo package-lock.json que apareceu quando colocamos o tal comando no terminal.
+As boas práticas sugerem que tais comandos para que fizemos acima para criarmos o package.json e o node_module sejam feitas dentro do diretório projeto seu.
+
+No caso, com o express já instalado precisamos fazer uma refatoração do projeto. No caso, no arquivo app.js precisamos fazer require do express.
+
+Agora, instalamos o EJS usando o npm. No caso, esse recurso vainos permitir escrever páginas html juntamente com instruções do JavaScript.
+Basta colocar o comando pelo terminal acessado o seu diretório projeto npm install ejs --save.
+Depois disso podemos ver que o ejs está disponível dentro de node_modules
+Agora, precisamos ir no arquivo app.js e informar para o express que foi implementado um novo recurso ejs e que será trabalhado em conjunto com o express.
+Para melhor organização vamos criar um diretório novo chamado views e dentro dele colocar arquivos htmls e chamar-las no app.js.
+
+Depois que instalamos o recurso ejs vamos refatorar o nosso código. Vamos substituir pelo diretório view que foi baixado que já tem os ejs prontos. E realizar as devidas modificações no app.js que considere tais refatorações.
+
+Agora, vamos instalar e testar o Nodemon usando o npm. No caso, ele servirá para que a cada alteração que realizamos no nosso projeto que ele seja renderizado sem a necessidade manula de ter quer parar a renderização para depois renderizar novamente o nosso projeto pelo terminal.
+Para a instalação basta rodar o comando pelo diretório projeto npm install -g nodemon
+Assim, em seguida, rode o comando nodemon (nome do arquivo sem a extensão), nodemon app.
+Dessa forma, qualquer alteração que ocorrer no seu script, o nodemon captará automaticamente e será feito o restart automático.
+
+Módulos - Permitem organizar melhor os nossos códigos de tal modo que isole uma determinada lógica nossa e que a mesma seja usada de forma recorrente para outras finalidades. Um exemplo de módulos seria as classes que aparecem nas programações orientadas à objetos.
+CommonJS - é que permite definir o formato da construção desses módulos. Uma estrutura de escrita que seja implementado no node de forma natural.
+Para experimentarmos tais recursos usamos vamos criar o arquivo mod_teste.js e dentro dela colocar um exemplo simples
+Feito isso precisa-se ser recuperado na aplicação app.js.
+No caso, o módulo pode retornar qualquer coisa (objeto, string, booleano, classe, etc...)
+Um caso mais comum que se retorna do módulo é uma função.
+
+Agora, para não ficar exaustivo, tais módulos podemos encontrar dentro do node_module se verificarmos nas biblioteca (lib). Uma delas no diretório ejs/lib
+
+Vamos agora aprender a modularizar as nossas aplicações. No caso, as requires que temos nos arquivos app.js podemos organizar melhor colocando-as dentro do diretório config que vamos criar e, dentro dela, no arquivo server.js. É necessário colocar o module.exports e especificar quem vc está retornando.
+Deixarei comentado os requires do app.js e nela apenas irei fazer um require que é vinda do diretório config e arquivo server.js
+
+Vamos modularizar um pouco mais as nossas aplicações, para a melhor organização. Para isso, vamos criar um diretório app e dentro dela mover o diretório view. Além disso, dentro do diretório app, vamos criar o outro diretório routes e movemos o diretório view dentro do diretório app.
+Daí, dentro do diretório routes vamos criar três arquivos .js que representam as respectivas rotas de cada página.
+Após feito isso, vamos precisar apontar os respectivos caminhos que foram feito. E tal caminho vamos configurar no server.js.
+Note que, na configuração dentro do server.js, temos que configurar como se estivessemos no app.js, então os níveis das paths precisam ser levadas em consideração ao app.js e não o arquivo server.js, app.set('views', './app/views');
+Para os arquivos .js que foram criado dentro do routes, precisamos exportar o módulo para que seja possível importar o mesmo no app.js, como podemos ver pelas variáveis que referencia as rotas que criadas, var rotaNoticias = require('./app/routes/noticias');
+Bastaria rodar nodemon app para verificar na porta indicada do localhost para verificar que as rotas funcionam perfeitamente.
+
+Vamos agora trabalhar com um banco de dados. No caso, existem vários bancos de dados. Para essa aula, vamos usar o MySQL. No caso, vamos precisar instalar o MySQL jogando no terminal npm install mysql --save.
+Feito a instalação acima, podemos ver que no node_modules vai aparecer um diretório mysql que indica que temos recursos para conseguirmos estabelecer a conexão com o banco de dados MySQL.
+
+Agora, vamos verificar se temos ou não o banco de dados MySQL instalado no computador, pois mesmo realizando a instalação dos recursos que permitem a conexão com o banco de dados no processo anterior, nada de adiante se não tivermos um banco de dados do tipo para o uso. https://www.mysql.com/ -> MySQL Community (GPL) Downloads 
+Será necessário criar um cadastro de usuário no site do mysql.
+As instruções de instalação acima, servem para Windows, então para o Mac será um outro pacote. https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/osx-installation-pkg.html ou https://dev.mysql.com/downloads/mysql/
+Importante: Durante a instalação, na etapa de configuração, marque a opção "Use Legacy Password Encryption".
+
+Agora, instalado o MySql no seu computador, vamos rodar ela. Para o Windows existem uma série de quesitos que precisam ser satisfeitas para a sua execução. No caso, precisaria entrar até a pasta bin onde está localizado o mysql.exec, tudo pelo terminal, e, finalmente, rodar o comando mysql -u root -p.
+No Linux ou Mac, bastaria, após o mysql instalado, rodar o seguinte comando pelo terminal "sudo mysql -u root -p" ou "mysql -u -root -p".
+Agora, rodando o mysql vamos verificar quais tipos de bancos de dados nela já possui. Bastaria colocar o comando "show databases;".
+Podemos criar um banco de dados tbm usando o comando "create database (nome do banco de dados que vc pode denotar);".
+Agora, para acessar o banco de dados que vc queira bastaria colocar o comando "use (nome do banco de dados existente)".
+Dentro do banco de dados, podemos criar tabelas. Para constar, ao colocarmos o comando "show tables;" mostrará que está vazio.
+Assim, para criar uma tabela podemos digitar "create table (nome da tabela que vc quer criar)<" e isso aparecerá um "->".
+Nela vc coloca os elementos que vão para a tabela, um exemplo, "id_noticias int not null primary key auto_increment,"
+Na próxima linha podemos colocar "titulo varchar<100>,"
+Na terceira linha colocar "noticia text,"
+E na quarta, e última, colocamos "data_criacao timestamp default current_timestamp>;", onde finalmente fechamos o ">" que foi iniciado no começo.
+Obs: Aqui foi usado "<" e ">" para representar os parentes. Mas isso só vale no windows. Para o Linux precisa ser "(" e ")".
+Agora, selecionando uma linha criada "select * from noticias;", vamos ver que essa linha está vazia.
+Assim, para colocar alguma informação precisamos colocar "insert into noticias(titulo, noticias)values('titulo da noticia', 'conteudo da noticia');".
+Novamente, colocar "select * from noticias;" para verificar o que tem dentro de noticias, vamos poder ver que há um registro que foi coloado acima.
+
+Nessa aula, vamos criar conexão com o banco de dados MySql e de lá realizar a requisição das informações que registramos nela.
+Antes de tudo, precisamos ver se já temos o módulo de mysql instalado no node_modules.
+Agora, no arquivo noticias.js vamos fazer a requisição do banco de dados mysql por lá.
+    var mysql = require('mysql');
+
+    var connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'Newton@2512',
+        database: 'portal_noticias'
+    });
+
+    connection.query('select * from noticias',function(error, result) {
+        res.send(result);
+    });
+No caso, acima seriam os parâmetros que precisamos para estabelecermos a conexão com o banco de dados MySql e conseguirmos realizar a requisição precisa das informações que consta no banco de dados.
+
+Agora, vamos criar os views dinâmicas com JavaScript. No caso, no arquivo noticias.js vamos colocar um código res.render, onde ela permite que o arquivo que corresponde a rota definida pelo arquivo noticias.js, consiga acessar e manipular as informações requisitadas pelo banco de dados.
+No caso, o arquivo correspondente é o noticias.ejs e nela, pela tag table, iremos mostrar tais informações que foram requisitadas.
+
+Agora, vamos fazer uma refatoração do método de conexão com o banco de dados MySQL. No caso, note que, a requisição feita para o banco de dados MySQL foi feito isoladamente dentro do arquivo noticias.js. Entretanto, essa conexão com o banco de dados, quando vista para um projeto gigante, não é eficiente, pois sempre que criarmos uma rota será necessário criar uma conexão com o banco de dados.
+No caso, seria mais fácil que somente um arquivo realize a tal conexão com o banco de dados e, nas rotas criadas, chamarmos a conexão sempre que for necessário. Assim, caso o banco de dados acabar indo de local para nuvem, bastaria mudar essa configuração nesse arquivo onde estabelece essa conexão e assim as rotas que chamam a conexão para realizar a tal requisição não será necessário realizar nenhuma alteração. Todas elas estarão vendo na mesma conexão da nuvem.
+O arquivo que será feito isso, estará dentro da pasta config com o nome dbConnection.js. E no arquivo noticias.js iremos pegar a linha
+var mysql = require('mysql');
+        
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '123456789',
+    database: 'portal_noticias'
+});
+que é o que estabelece a conexão com o banco de dados MySQL e iremos transferir para esse arquivo dbConnection.js.
+Por fim, no arquivo noticias.js iremos chamar esse arquivo dbConnection pelo require.
+
+Realizar a revisão relendo e confirmando cada passos que foi aprendido até agora nas notas anteriores referente ao assunto abordado da seção anterior!!
+
+Agora, vamos implementar o Consign. No caso, esse recurso ela serve para caso vc tiver um número muito grande de routes para gerenciar.
