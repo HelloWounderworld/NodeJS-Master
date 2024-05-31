@@ -32,7 +32,9 @@ https://developer.mozilla.org/pt-BR/docs/Learn/Server-side/First_steps/Client-Se
 ## Aula 4 - Download e instalação do NodeJS:
 Download e Instalação do node. Basta visitar a página nodejs.org.
 
-## Aula 5 - [Linux] - Instalação do NodeJS:
+## Aula 5 - Instalação do NodeJS:
+
+### [Linux]:
 [Linux] - Instalação do NodeJS
 Artigo dedicado a usuários do sistema operacional Linux
 
@@ -111,6 +113,9 @@ Os comandos acima deverão ter como resultado algo como a imagem abaixo:
 Qualquer dúvida ou sugestão é informar ;)
 
 Bons estudos!!!
+
+### [Windows]:
+
 
 ## Aula 6 - Instalando o sublime text para criação/edição de scripts:
 Instalar o VSCode ou algum outr sublime text que esteja em alta do momento.
