@@ -251,6 +251,8 @@ Para a instalação basta rodar o comando pelo diretório projeto
 
     npm install -g nodemon
 
-Assim, em seguida, rode o comando nodemon (nome do arquivo sem a extensão), nodemon app.
+Assim, em seguida, rode o comando nodemon (nome do arquivo sem a extensão)
+
+    nodemon app
 
 Dessa forma, qualquer alteração que ocorrer no seu script, o nodemon captará automaticamente e será feito o restart automático.
