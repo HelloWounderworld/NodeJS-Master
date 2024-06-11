@@ -124,8 +124,57 @@ As funcoes que vem dentro dos metodos sao chamadas de funcoes de call-back.
 
 Ao rodarmos o app.js pelo terminal e analisarmos o localhost:3000 conseguirmos, agora, acessar as paths de forma mais direta e a construcao do codigo em si, com o express, fica mais simples, comparado ao arquivo noticias.js.
 
+### Funções de Callback
+As funções de callback em JavaScript são funções que são passadas como argumentos para outras funções e são executadas após a conclusão de uma determinada operação. Essas funções são essenciais para lidar com operações assíncronas em JavaScript, permitindo que o código continue a execução sem bloqueio enquanto espera que uma operação, como I/O de arquivo, solicitações de rede ou temporizadores, seja concluída.
+
+#### Características das Funções de Callback:
+1. Assincronia: As funções de callback são uma maneira de garantir que determinadas partes do código só sejam executadas após a conclusão de operações assíncronas.
+
+2. Continuação do Fluxo: Elas permitem que o fluxo de execução do programa continue sem interrupção, e a função de callback é chamada apenas quando a operação assíncrona termina.
+
+3. Encapsulamento de Lógica: A lógica que precisa ser executada após a operação pode ser encapsulada dentro da função de callback.
+
+#### Exemplo Básico:
+
+    function fetchData(callback) {
+        setTimeout(() => {
+            callback('Dados recebidos');
+        }, 1000);
+    }
+
+    function processData(data) {
+        console.log(data);
+    }
+
+    fetchData(processData);
+
+No exemplo acima, fetchData simula uma operação assíncrona que leva 1 segundo para completar (usando setTimeout). Após a operação, ela chama a função processData passando 'Dados recebidos' como argumento.
+
+#### Uso em Node.js:
+Em Node.js, as funções de callback são amplamente utilizadas para operações de I/O, como leitura/escrita de arquivos, operações de banco de dados, ou chamadas de rede. Por exemplo, ao ler um arquivo:
+
+    const fs = require('fs');
+
+    fs.readFile('/path/to/file', 'utf8', (err, data) => {
+        if (err) {
+            console.error('Erro ao ler o arquivo', err);
+            return;
+        }
+        console.log(data);
+    });
+
+#### Problemas Comuns:
+- Callback Hell: Também conhecido como "Pyramid of Doom", é uma situação onde há muitas funções de callback aninhadas, tornando o código difícil de ler e manter.
+
+- Controle de Fluxo: Gerenciar o fluxo de execução em operações assíncronas complexas com múltiplas callbacks pode ser desafiador.
+
+#### Soluções Modernas:
+Para lidar com a complexidade das callbacks e melhorar a legibilidade do código, foram introduzidas Promises e, mais recentemente, Async/Await, que permitem escrever código assíncrono de maneira mais limpa e intuitiva.
+
+As funções de callback são fundamentais em JavaScript, especialmente em ambientes assíncronos, e entender como utilizá-las eficientemente é crucial para qualquer desenvolvedor JavaScript.
+
 ## Aula 4 - Refactoring do projeto prático portal de notícias com Express:
-Agora, instalamos o EJS usando o npm. No caso, esse recurso vai nos permitir escrever páginas html juntamente com instruções do JavaScript.
+Agora, instalamos o EJS usando o npm. No caso, esse recurso vai nos permitir escrever páginas html de forma dinamica juntamente com instruções do JavaScript.
 
 Basta colocar o comando pelo terminal acessado o seu diretório projeto
 
@@ -133,9 +182,59 @@ Basta colocar o comando pelo terminal acessado o seu diretório projeto
 
 Depois disso podemos ver que o ejs está disponível dentro de node_modules.
 
-Agora, precisamos ir no arquivo app.js e informar para o express que foi implementado um novo recurso ejs e que será trabalhado em conjunto com o express.
+Agora, precisamos ir no arquivo app.js e informar para o express que foi implementado um novo recurso ejs e que será trabalhado em conjunto com o express
+
+    app.set('view engine', 'ejs');
+
+O codigo inteiro ficaria
+
+    let express = require('express');
+    let app = express();
+
+    app.set('view engine', 'ejs');
+
+    app.get('/', function(req, res) {
+        res.send("<html><body>Portal de noticias</body></html>");
+    });
+
+    app.get('/tecnologia', function(req, res) {
+        res.send("<html><body>Noticias de tecnologia</body></html>");
+    });
+
+    app.listen(3000, function(){
+        console.log("Servidor rodando com express!");
+    });
 
 Para melhor organização vamos criar um diretório novo chamado views e dentro dele colocar arquivos htmls e chamar-las no app.js.
+
+Para rodarmos o arquivo html, precisamos realizar algumas alteracoes no app.js na execusao do express. Vamos precisar usar o metodo render(), como seguinte
+
+    let express = require('express');
+    let app = express();
+
+    app.set('view engine', 'ejs');
+
+    app.get('/tecnologia', function(req, res) {
+        res.render("secao/tecnologia");
+    });
+
+    app.get('/', function(req, res) {
+        res.send("<html><body>Portal de noticias</body></html>");
+    });
+
+    app.listen(3000, function(){
+        console.log("Servidor rodando com express!");
+    });
+
+Dentro do diretorio view, criamos um outro diretorio, secao, e, dentro desse diretorio, criamos o arquivo tecnologia.ejs e nela inserimos o seguinte
+
+    <html>
+        <body>
+            <h1>Secao de Noticias</h1>
+        </body>
+    </html>
+
+Agora, ao rodarmos o app.js pelo terminal conseguimos ver que as mudancas que fizermos nas paths surtiram efeito.
 
 ## Aula 5 - NPM - Instalando o EJS - Download das views do projeto prático portal de notícias - Refactoring do projeto prático portal de notícias com EJS:
 Depois que instalamos o recurso ejs vamos refatorar o nosso código. Vamos substituir pelo diretório view que foi baixado que já tem os ejs prontos. E realizar as devidas modificações no app.js que considere tais refatorações.
