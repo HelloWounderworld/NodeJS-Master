@@ -236,15 +236,15 @@ Dentro do diretorio view, criamos um outro diretorio, secao, e, dentro desse dir
 
 Agora, ao rodarmos o app.js pelo terminal conseguimos ver que as mudancas que fizermos nas paths surtiram efeito.
 
-## Aula 5 - NPM - Instalando o EJS - Download das views do projeto prático portal de notícias - Refactoring do projeto prático portal de notícias com EJS:
-Depois que instalamos o recurso ejs vamos refatorar o nosso código. Vamos substituir pelo diretório view que foi baixado que já tem os ejs prontos. E realizar as devidas modificações no app.js que considere tais refatorações.
-Utilize o link disponibilizado como recurso dessa aula para fazer o download das views do projeto prático portal de notícias.
+Vamos abordar mais ainda sobre o ejs e praticar mais.
 
-Bons estudos ;)
+Vamos copiar e colar o diretorio view dentro do arquivo_da_aula para dentro do diretorio, curso_nodejs.
 
-Recursos
+Nela tera configurado todos os subdiretorios e arquivos ejs.
 
-## Aula 6 - NPM - Instalando e testando o Nodemon:
+Agora, basta configurarmos as rotas pelo app.js.
+
+## Aula 5 - NPM - Instalando e testando o Nodemon:
 Agora, vamos instalar e testar o Nodemon usando o npm. No caso, ele servirá para que a cada alteração que realizamos no nosso projeto que ele seja renderizado sem a necessidade manula de ter quer parar a renderização para depois renderizar novamente o nosso projeto pelo terminal.
 
 Para a instalação basta rodar o comando pelo diretório projeto
