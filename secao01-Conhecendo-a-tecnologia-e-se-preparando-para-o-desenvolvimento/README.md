@@ -18,7 +18,7 @@ O Curso Completo do Desenvolvedor NodeJS e MongoDB possui um grupo no Facebook, 
 
 Vale lembrar porém que o grupo não é dedicado ao suporte de dúvidas do curso, as dúvidas deverão ser postadas aqui no fórum da Udemy normalmente.
 
-Link do grupo: 
+Link do grupo:
 
 https://www.facebook.com/groups/458536931149217/
 
@@ -115,7 +115,31 @@ Qualquer dúvida ou sugestão é informar ;)
 Bons estudos!!!
 
 ### [Windows]:
+1. Visite o site oficial do Node.js: Acesse nodejs.org.
 
+2. Baixe o instalador: Na página inicial, você verá opções para baixar o Node.js. Geralmente, há duas versões disponíveis: a versão LTS (Long Term Support), que é mais estável e suportada por um período mais longo, e a versão Current, que possui os recursos mais recentes. Para a maioria dos usuários, recomenda-se baixar a versão LTS.
+
+3. Execute o instalador: Após o download, execute o arquivo baixado. Isso abrirá o assistente de instalação do Node.js.
+
+4. Siga as instruções do instalador: O instalador irá guiá-lo através de várias etapas. Aceite o contrato de licença, escolha o diretório de instalação e selecione os componentes que deseja instalar. É recomendável manter as opções padrão, que incluem o NPM (Node Package Manager).
+
+5. Finalize a instalação: Após selecionar as opções desejadas, continue com a instalação. O instalador configurará o Node.js e o NPM no seu sistema.
+
+6. Verifique a instalação:
+    Para verificar se o Node.js foi instalado corretamente, abra o Prompt de Comando (cmd) e digite:
+
+           node -v
+
+    Isso deve exibir a versão do Node.js instalada. Você também pode verificar a instalação do NPM com:
+
+           npm -v
+
+Atualize o NPM (opcional):
+    Para garantir que você tenha a versão mais recente do NPM, você pode atualizá-lo usando o seguinte comando no Prompt de Comando:
+
+        npm install npm@latest -g
+
+Com esses passos, você terá o Node.js e o NPM instalados e prontos para uso no Windows.
 
 ## Aula 6 - Instalando o sublime text para criação/edição de scripts:
-Instalar o VSCode ou algum outr sublime text que esteja em alta do momento.
+Instalar o VSCode ou Cursor AI ou algum outro sublime text que esteja em alta do momento.
