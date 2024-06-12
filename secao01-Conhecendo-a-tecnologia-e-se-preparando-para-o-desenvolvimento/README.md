@@ -13,6 +13,51 @@ Temos 4 recursos que serão essenciais e úteis para melhor produtividade como p
 
 - Nas classes, em todos os momentos será usado o bootstrap.
 
+### Sobre NodeJS
+Node.js é uma plataforma de execução de código JavaScript do lado do servidor, ou seja, no backend. Ele permite que os desenvolvedores utilizem JavaScript para desenvolver aplicações que executam fora do ambiente do navegador, como servidores web, APIs, ferramentas de linha de comando, e muito mais. Node.js é construído sobre o motor V8 do Google Chrome, o mesmo usado para executar JavaScript nos navegadores, mas adaptado para funcionar em sistemas operacionais como Windows, macOS e Linux.
+
+#### Finalidades do Node.js:
+1. Desenvolvimento de Servidores Web: Node.js é amplamente utilizado para construir servidores web e APIs RESTful devido à sua capacidade de lidar com I/O assíncrono e muitas conexões simultâneas de forma eficiente.
+
+2. Desenvolvimento de Aplicações em Tempo Real: Plataformas como chats, jogos online e sistemas de colaboração em tempo real se beneficiam da arquitetura orientada a eventos do Node.js, que pode processar muitas conexões simultâneas com baixa latência.
+
+3. Desenvolvimento de Ferramentas e Utilitários: Node.js é usado para criar ferramentas de linha de comando e scripts de automação, aproveitando o vasto ecossistema de pacotes disponíveis através do npm.
+
+4. Microserviços: Devido à sua natureza leve e modular, Node.js é uma escolha popular para a construção de microserviços, permitindo que as aplicações sejam divididas em pequenos serviços independentes.
+
+5. Internet das Coisas (IoT): Node.js também é usado em aplicações de IoT, onde a capacidade de lidar com I/O não bloqueante e a comunicação em tempo real são cruciais.
+
+#### Principais características do Node.js para servidores:
+1. Assíncrono e Não Bloqueante: Node.js opera em um modelo de I/O não bloqueante e orientado a eventos, o que o torna eficiente e adequado para operações intensivas de I/O, como servidores web.
+
+2. Construído para Escalabilidade: Devido ao seu modelo de operação assíncrono, o Node.js pode lidar com muitas conexões simultâneas com alta performance, o que é ideal para desenvolver servidores web e APIs RESTful que precisam de alta escalabilidade.
+
+3. Uso de JavaScript: Permite que os desenvolvedores usem JavaScript no servidor, além do cliente, o que proporciona uma experiência de desenvolvimento mais uniforme e a possibilidade de compartilhar código entre o cliente e o servidor.
+
+4. Ecossistema Rico: Com o npm (Node Package Manager), o Node.js tem um dos maiores ecossistemas de bibliotecas e frameworks, facilitando a adição de funcionalidades e a construção de aplicações complexas.
+
+5. Frameworks e Ferramentas: Existem muitos frameworks, como Express.js, Koa, NestJS, que facilitam a criação de servidores web robustos e APIs usando Node.js.
+
+#### Exemplo de um servidor básico com Node.js usando Express.js:
+
+    const express = require('express');
+    const app = express();
+
+    app.get('/', (req, res) => {
+        res.send('Olá, mundo!');
+    });
+
+    app.listen(3000, () => {
+        console.log('Servidor rodando na porta 3000');
+    });
+
+Neste exemplo, um servidor web simples é criado usando o framework Express.js. Ele responde com "Olá, mundo!" para requisições GET na raiz do site.
+
+#### Conclusão
+Node.js é uma escolha popular para construir servidores devido à sua eficiência em lidar com operações assíncronas, sua capacidade de escalar para suportar muitas conexões simultâneas, e a vantagem de usar JavaScript tanto no cliente quanto no servidor. Ele é adequado para uma ampla gama de aplicações de servidor, incluindo mas não limitado a servidores web, APIs RESTful, microserviços, e muito mais.
+
+Node.js é uma plataforma poderosa que estende o uso do JavaScript para além dos navegadores, permitindo o desenvolvimento de uma variedade de aplicações no lado do servidor. Ele não é um framework, mas sua funcionalidade pode ser estendida por diversos frameworks e bibliotecas disponíveis no ecossistema Node.js.
+
 ## Aula 2 - [Extra] Canais de comunicação:
 O Curso Completo do Desenvolvedor NodeJS e MongoDB possui um grupo no Facebook, a proposta é criar uma espaço colaborativo, possibilitando a troca de conhecimentos e experiências entre os participantes do curso, uma ótima oportunidade para conhecer pessoas com os mesmos objetivos profissionais que você!
 
