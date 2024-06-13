@@ -629,6 +629,57 @@ E, usando a função append que temos no jquery, podemos colocar o seguinte:
 
 Assim, o formato acima nos permite receber diretamente no chat o aviso da entrada do usuário.
 
+### O que e JQuery
+jQuery é uma biblioteca JavaScript rápida, pequena e rica em recursos, criada para simplificar a maneira como se escreve e se manipula o código JavaScript no navegador. Foi lançada por John Resig em 2006 e rapidamente se tornou uma das ferramentas mais populares entre os desenvolvedores web devido à sua facilidade de uso e poderosas funcionalidades.
+
+#### Principais Características do jQuery:
+1. Manipulação do DOM: jQuery oferece uma API simples e eficaz para selecionar e manipular elementos do Document Object Model (DOM) de uma página web. Isso inclui alterar textos, atributos, e estilos CSS, além de inserir e remover elementos.
+
+2. Event Handling: Facilita a manipulação de eventos, como cliques, hover, e outros eventos de usuário, com uma sintaxe mais simples e clara comparada ao JavaScript puro (vanilla JavaScript).
+
+3. Efeitos e Animações: jQuery vem com várias opções para adicionar efeitos visuais e animações aos elementos da página, como fades, slides, e personalizações mais complexas.
+
+4. Ajax: Simplifica muito o uso de Ajax (Asynchronous JavaScript and XML), permitindo que os desenvolvedores façam requisições HTTP assíncronas de maneira mais fácil e com menos código. Isso é útil para carregar dados dinamicamente sem recarregar a página.
+
+5. Compatibilidade Cross-Browser: Uma das grandes vantagens do jQuery é sua capacidade de abstrair as diferenças entre os navegadores, oferecendo uma API consistente que funciona de maneira uniforme nos mais diversos browsers.
+
+#### Exemplo de Uso Básico do jQuery:
+Para começar a usar jQuery, você pode incluir a biblioteca em sua página HTML através de uma tag <script> apontando para um CDN:
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+Aqui está um exemplo simples de como o jQuery pode ser usado para manipular o DOM e tratar eventos:
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exemplo jQuery</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // Esconde todos os parágrafos ao clicar no botão
+                $("button").click(function() {
+                    $("p").hide();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button>Esconder Parágrafos</button>
+        <p>Este é um parágrafo.</p>
+        <p>Este é outro parágrafo.</p>
+    </body>
+    </html>
+
+Neste exemplo, quando o botão é clicado, todos os elementos <p> são escondidos. Isso é feito usando o seletor $("p") para selecionar os parágrafos e o método .hide() para escondê-los.
+
+#### Declínio e Alternativas:
+Apesar de sua popularidade, o uso do jQuery tem diminuído nos últimos anos. Isso se deve, em parte, à evolução do JavaScript moderno (ES6+) e dos navegadores, que agora oferecem muitas das funcionalidades que antes eram facilitadas pelo jQuery. Além disso, frameworks modernos como React, Angular e Vue.js oferecem uma abordagem mais robusta e escalável para construir aplicações web interativas.
+
+#### Conclusão:
+jQuery foi uma ferramenta revolucionária que ajudou a moldar o desenvolvimento web moderno, simplificando muitas tarefas complexas e promovendo maior compatibilidade entre navegadores. Embora ainda seja útil para projetos mais simples ou para manutenção de sistemas legados, muitos desenvolvedores estão migrando para tecnologias mais recentes que se alinham melhor com as práticas atuais de desenvolvimento web.
+
 ## Aula 12 - Trocando mensagens entre usuários conectados no chat:
 Nessa aula, vamos aprender a realizar uma troca de msg real.
 

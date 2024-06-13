@@ -98,6 +98,68 @@ CommonJS é uma especificação de padrão para modularização de código JavaS
 
 - Gerenciamento de Dependências: CommonJS trata das dependências de forma explícita através do uso de require(). Isso torna as dependências claras e gerenciáveis.
 
+### Aplicando os conceitos
+No projeto, curso-nodejs, criamos um novo arquivo na raiz, mod_teste.js, e nela inserimos o seguinte
+
+    let msg = "Este modulo contem apenas uma string.";
+
+Agora, no arquivo, app.js, nela inserimos o seguinte
+
+    let msg = require('./mod_teste');
+
+Ao executarmos, usando o nodemon, o app.js e visitando o localhost:3000, vamos ver que nao temos nenhuma resposta pelo terminal.
+
+A maneira como configuramos o arquivo, mod_teste.js, nao quer dizer nada. Precisamos colocar algo que, de fato, corresponda ao require
+
+    let msg = "Este modulo contem apenas uma string.";
+
+    module.exports = msg;
+
+Agora, vamos conseguir ver que no, nodemon, o arquivo, app.js, esta devolvendo o que queremos, que e a mensagem que definimos acima.
+
+O modo mais frequente de usarmos o module.exports, e que ela retorne uma funcao, como seguinte 
+
+    module.exports = function() {
+        let msg = "Este modulo contem apenas uma string.";
+        return msg;
+    };
+
+Ao analisarmos o que e retornado pelo terminal, vamos ver que e retornado uma function, [Function (anonymous)]. Ou seja, sinifica que precisamos que essa funcao retornado seja executado, como seguinte
+
+    let msg = require('./mod_teste');
+
+    app.listen(3000, function(){
+        // console.log("Servidor rodando com express!");
+        console.log(msg());
+    });
+
+O codigo inteiro do app.js, fica
+
+    // Instalei o Nodemon. Rode no terminal: nodemon app
+    let express = require('express');
+    let msg = require('./mod_teste');
+
+    let app = express();
+
+    app.set('view engine', 'ejs');
+
+    app.get('/', function(req, res) {
+        res.render("home/index");
+    });
+
+    app.get('/formulario_inclusao_noticia', function(req, res) {
+        res.render("admin/form_add_noticia");
+    });
+
+    app.get('/noticia', function(req, res) {
+        res.render("noticias/noticias");
+    });
+
+    app.listen(3000, function(){
+        // console.log("Servidor rodando com express!");
+        console.log(msg());
+    });
+
 #### Impacto no Desenvolvimento de Aplicações:
 O uso de CommonJS no Node.js revolucionou o desenvolvimento de aplicações JavaScript no servidor, permitindo que os desenvolvedores utilizem a mesma linguagem tanto no cliente quanto no servidor, e gerenciem suas dependências de forma eficaz.
 
@@ -107,24 +169,97 @@ Carregamento Síncrono: O carregamento síncrono pode ser um problema para aplic
 Em resumo, CommonJS é fundamental para a modularização em Node.js, facilitando a organização do código, a manutenção e a escalabilidade das aplicações.
 
 ## Aula 2 - Criando um módulo para configurações do servidor:
-Agora, para não ficar exaustivo, tais módulos podemos encontrar dentro do node_module se verificarmos nas biblioteca (lib). Uma delas no diretório ejs/lib
+Agora, para não ficar exaustivo, tais módulos podemos encontrar dentro do node_module se verificarmos nas biblioteca (lib). Uma delas no diretório ejs/lib.
+
+Bom, vamos precisar criar um diretorio chamado "config", onde dentro dela, estara todas as configuracoes necessarias que vamos precisar para o lado do servidor
+
+    let express = require('express');
+    let app = express();
+    app.set('view engine', 'ejs');
+
+    module.exports = app;
+
+E no arquivo, app.js, realizamos a seguinte mudanca
+
+    let app = require('./config/server');
+
+    app.get('/', function(req, res) {
+        res.render("home/index");
+    });
+
+    app.get('/formulario_inclusao_noticia', function(req, res) {
+        res.render("admin/form_add_noticia");
+    });
+
+    app.get('/noticia', function(req, res) {
+        res.render("noticias/noticias");
+    });
+
+    app.listen(3000, function(){
+        console.log('Servidor ON');
+    });
+
+Ou seja, o que fizemos aqui, seria em transferir todas as configuracoes de servidor para o arquivo server.js. Assim, por diante, qualquer require que esteja ligado, diretamente com o server, iremos configurar dentro do arquivo, server.js.
 
 ## Aula 3 - Reestruturando a aplicação e criando um módulo para definição das rotas:
-Vamos agora aprender a modularizar as nossas aplicações. No caso, as requires que temos nos arquivos app.js podemos organizar melhor colocando-as dentro do diretório config que vamos criar e, dentro dela, no arquivo server.js.
-
-É necessário colocar o module.exports e especificar quem vc está retornando.
-
-Deixarei comentado os requires do app.js e nela apenas irei fazer um require que é vinda do diretório config e arquivo server.js.
-
 Vamos modularizar um pouco mais as nossas aplicações, para a melhor organização. 
 
-Para isso, vamos criar um diretório app e dentro dela mover o diretório view. 
+Para isso, vamos criar um diretório app e dentro dela mover o diretório view.
 
-Além disso, dentro do diretório app, vamos criar o outro diretório routes e movemos o diretório view dentro do diretório app.
+O diretorio app sera onde ficara o nosso codigo de aplicacao e o diretorio, config, sera onde ficara o nosso codigo de configuracao de servidor.
 
-Daí, dentro do diretório routes vamos criar três arquivos .js que representam as respectivas rotas de cada página.
+Além disso, dentro do diretório app, vamos criar o outro diretório routes.
+
+Daí, dentro do diretório routes vamos criar três arquivos .js que representam as respectivas rotas de cada página, form_inclusao_noticia.js, home.js e noticias.js.
+
+Dai, para cada arquivo do routes que foi criado, vamos enviar as paths de cada trecho do arquivo app.js, como seguinte
+
+Para form_inclusao_noticia.js
+
+    module.exports = function(app){
+        app.get('/formulario_inclusao_noticia', function(req,res){
+            res.render('admin/form_add_noticia');
+        });
+    }
+
+Para home.js
+
+    module.exports = function(app){
+        app.get('/', function(req,res){
+            res.render('home/index');
+        });
+    }
+
+Para noticias.js
+
+    module.exports = function(app){
+        app.get('/noticias', function(req,res){
+            res.render('noticias/noticias');
+        });
+    }
+
+Feito isso, no arquivo, app.js, vamos precisar realizar as seguintes requires
+
+    let app = require('./config/server');
+
+    let rotaNoticias = require('./app/routes/noticias')(app);
+
+    let rotaHome = require('./app/routes/home')(app);
+
+    let rotaFormInclusaoNoticia = require('./app/routes/form_inclusao_noticia')(app);
+
+    app.listen(3000, function(){
+        console.log('Servidor ON');
+    });
 
 Após feito isso, vamos precisar apontar os respectivos caminhos que foram feito. E tal caminho vamos configurar no server.js.
+
+    let express = require('express');
+    let app = express();
+    app.set('view engine', 'ejs');
+    app.set('views', './app/views');
+
+    module.exports = app;
 
 Note que, na configuração dentro do server.js, temos que configurar como se estivessemos no app.js, então os níveis das paths precisam ser levadas em consideração ao app.js e não o arquivo server.js, app.set('views', './app/views');
 
