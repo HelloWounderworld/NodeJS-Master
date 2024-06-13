@@ -1,4 +1,5 @@
 # Seção 5 - Conectando ao banco de dados MySQL:
+
 ## Aula 1 - NPM - Instalando o modulo de conexão do MySQL:
 Vamos agora trabalhar com um banco de dados. No caso, existem vários bancos de dados. Para essa aula, vamos usar o MySQL. 
 
@@ -9,9 +10,9 @@ No caso, vamos precisar instalar o MySQL jogando no terminal
 Feito a instalação acima, podemos ver que no node_modules vai aparecer um diretório mysql que indica que temos recursos para conseguirmos estabelecer a conexão com o banco de dados MySQL.
 
 # Aula 2 - Extra - Instalando o banco de dados MySQL:
-Agora, vamos verificar se temos ou não o banco de dados MySQL instalado no computador, pois mesmo realizando a instalação dos recursos que permitem a conexão com o banco de dados no processo anterior, nada de adiante se não tivermos um banco de dados do tipo para o uso.
+Agora, vamos verificar se temos ou não o banco de dados MySQL instalado no computador, pois mesmo realizando a instalação dos recursos que permitem a conexão com o banco de dados no processo anterior, nada de adianta se não tivermos um banco de dados do tipo para o uso.
 
-    https://www.mysql.com/ -> MySQL Community (GPL) Downloads
+    https://www.mysql.com/ -> MySQL Community (GPL) Downloads　-> MySQL Installer for Windows -> Windows (x86, 32-bit), MSI Installer
 
 Será necessário criar um cadastro de usuário no site do mysql.
 
